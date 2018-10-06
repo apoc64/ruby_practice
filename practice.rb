@@ -23,7 +23,9 @@ def is_close(char)
 end
 
 def closes_stack(opener, closer)
-  (opener == "{" && closer == "}") || (opener == "[" && closer == "]") || (opener == "(" && closer == ")")
+  (opener == "{" && closer == "}") ||
+  (opener == "[" && closer == "]") ||
+  (opener == "(" && closer == ")")
 end
 
 v1 = closed("[{()}]")
@@ -36,3 +38,5 @@ v4 = closed("[{}]{")
 puts "v4 should be false. It is #{v4}"
 v5 = closed("hello[do the thing {,,,}](yes)")
 puts "v5 should be true. It is #{v5}"
+v6 = closed("goodbye[do the thing {,,,]}(no)")
+puts "v6 should be false. It is #{v6}"
